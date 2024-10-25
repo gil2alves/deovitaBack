@@ -49,7 +49,8 @@ class ConsultationController extends Controller
                     'sex' => $consultation->patient->sex,
                     'exams' => $consultation->examsConsultations->map(function ($ec) {
                         return $ec->exam->type_of_exam;
-                    })->toArray()
+                    })->toArray(),
+                    'duration' => $duration
                 ];
             });
 
